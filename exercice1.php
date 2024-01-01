@@ -1,0 +1,1 @@
+les variables suivantes sont valides en PHP : mavar, $mavar, $var5, $_mavar, $__élément1. Les variables $_5var et $hotel4* ne sont pas valides en raison de la présence de chiffres et de caractères spéciaux non autorisés, respectivement.
