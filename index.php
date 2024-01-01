@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil</title>
-    
+    <title>Page d'accueil - Exercices PHP</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,26 +18,37 @@
             color: #333;
         }
 
-        select {
-            padding: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .description {
+            text-align: left;
+            margin-bottom: 40px;
         }
 
         .moi {
             text-align: left;
-            width: 40%;
+            width: 60%;
+            margin: 0 auto;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             background-color: #fff;
             color: #333;
         }
 
         label {
             font-size: 15px;
-            color: blue;
+            color: #3498db;
         }
 
         a {
@@ -47,6 +59,7 @@
             border-radius: 5px;
             margin-top: 20px;
             display: inline-block;
+            transition: background-color 0.3s ease;
         }
 
         a:hover {
@@ -54,7 +67,13 @@
         }
     </style>
 </head>
+
 <body>
+
+    <div class="container">
+        <h1>Bienvenue sur ma page d'accueil d'exercices PHP !</h1>
+        <p>Explorez ces exercices PHP soigneusement conçus pour vous aider à renforcer vos compétences dans ce langage de programmation puissant. Chaque exercice couvre différents aspects de PHP, vous permettant de pratiquer et de consolider vos connaissances de manière interactive.</p>
+    </div>
 
     <section class="moi">
         <h3>
@@ -66,17 +85,23 @@
         </h3>
     </section>
 
-    <a href="PAGE_ACCEUIL.PHP">Acceuil</a>
+    <div class="container description">
+        <h2>Cliquez ci-dessous pour commencer :</h2>
+        <select id="exercice" onchange="window.location.href=this.value">
+            <option value="" selected disabled>Choisissez un exercice PHP</option>
 
-    <h2>Cliquer ci-dessous !</h2>
-    <select id="exercice" onchange="window.location.href=this.value">
-    <option value="" selected disabled>Selectionnez un exercice</option>
+            <?php
+            for ($i = 1; $i <= 18; $i++) {
+                echo "<option value='Exercice{$i}.php'>Exercice {$i}</option>";
+            }
+            ?>
+        </select>
+    </div>
 
-        <?php
-        for ($i = 1; $i <= 18; $i++) {
-            echo "<option value='Exercice{$i}.php'>exercice {$i}</option>";
-        }
-        ?>
-    </select>
+    <footer>
+        <a href="PAGE_ACCEUIL.PHP">Accueil</a>
+    </footer>
+
 </body>
+
 </html>
